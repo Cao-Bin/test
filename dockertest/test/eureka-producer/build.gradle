@@ -1,0 +1,20 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'spring-boot'
+
+dependencies {
+    compile(
+//        "org.springframework.cloud:spring-cloud-config-client"
+    )
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = false
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
+}

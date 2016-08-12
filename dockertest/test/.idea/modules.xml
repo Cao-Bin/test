@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus.iml" group="eureka-bus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus_main.iml" group="eureka-bus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-bus/eureka-bus_test.iml" group="eureka-bus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config.iml" group="eureka-config" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config_main.iml" group="eureka-config" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-config/eureka-config_test.iml" group="eureka-config" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer.iml" group="eureka-consumer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer_main.iml" group="eureka-consumer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-consumer/eureka-consumer_test.iml" group="eureka-consumer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer.iml" group="eureka-producer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer_main.iml" group="eureka-producer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-producer/eureka-producer_test.iml" group="eureka-producer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server.iml" group="eureka-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server_main.iml" group="eureka-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eureka-server/eureka-server_test.iml" group="eureka-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test.iml" filepath="$PROJECT_DIR$/.idea/modules/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test_main.iml" filepath="$PROJECT_DIR$/.idea/modules/test_main.iml" group="test" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test_test.iml" filepath="$PROJECT_DIR$/.idea/modules/test_test.iml" group="test" />
+    </modules>
+  </component>
+</project>

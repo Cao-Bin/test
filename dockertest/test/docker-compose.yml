@@ -1,0 +1,53 @@
+version: '2'
+services:
+
+  discovery:
+  #  build: ./eureka-server/src/main/docker/Dockerfile
+    image: com.yf/eureka-server:1.0-SNAPSHOT
+    ports:
+      - "8761:8761"
+  #  links:
+  #    - config
+
+  config:
+  #  build: ./eureka-config/src/main/docker/Dockerfile
+    image: com.yf/eureka-config:1.0-SNAPSHOT
+    ports:
+      - "8888:8888"
+    expose:
+      - "8888"
+    links:
+      - discovery
+
+
+  producer:
+  #  build: ./eureka-producer/src/main/docker/Dockerfile
+    image: com.yf/eureka-producer:1.0-SNAPSHOT
+#    command: "sleep 15000"
+    ports:
+      - "1111:1111"
+    links:
+      - discovery
+      - config
+
+
+  consumer:
+  #  build: ./eureka-consumer/src/main/docker/Dockerfile
+    image: com.yf/eureka-consumer:1.0-SNAPSHOT
+#    command: until netcat -z -w 2 172.18.0.3 8888; do sleep 3; done
+#    command: dockerize -wait http://172.18.0.3:8888 go test -v ./...
+#    command: dockerize -wait http://172.18.0.3:8888 until netcat -z -w 2 172.18.0.3 8888; do sleep 1; done
+    ports:
+      - "2222:2222"
+    links:
+      - producer
+      - config
+
+  bus:
+  #  build: ./eureka-consumer/src/main/docker/Dockerfile
+    image: com.yf/eureka-bus:1.0-SNAPSHOT
+    ports:
+      - "9999:9999"
+    links:
+      - discovery
+      - config

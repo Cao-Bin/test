@@ -1,0 +1,38 @@
+
+discovery:
+#  build: ./eureka-server/src/main/docker/Dockerfile
+  image: com.yf/eureka-server:1.0-SNAPSHOT
+  ports:
+    - "8761:8761"
+#  links:
+#    - config
+
+config:
+#  build: ./eureka-config/src/main/docker/Dockerfile
+  image: com.yf/eureka-config:1.0-SNAPSHOT
+  ports:
+    - "8888:8888"
+  links:
+    - discovery
+
+
+producer:
+#  build: ./eureka-producer/src/main/docker/Dockerfile
+  image: com.yf/eureka-producer:1.0-SNAPSHOT
+  command: "sleep 10000"
+  ports:
+    - "1111:1111"
+  links:
+    - discovery
+    - config
+
+
+consumer:
+#  build: ./eureka-consumer/src/main/docker/Dockerfile
+  image: com.yf/eureka-consumer:1.0-SNAPSHOT
+  command: "sleep 10000"
+  ports:
+    - "2222:2222"
+  links:
+    - producer
+    - config

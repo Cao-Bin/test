@@ -1,0 +1,31 @@
+#!/bin/sh
+
+cd ~/IdeaProjects/test
+
+docker rm -f discovery
+docker rm -f config
+docker rm -f producer
+docker rm -f consumer
+docker rm -f bus
+
+docker rm -f rabbitmq
+
+docker rmi com.yf/eureka-server:1.0-SNAPSHOT
+docker rmi com.yf/eureka-config:1.0-SNAPSHOT
+docker rmi com.yf/eureka-producer:1.0-SNAPSHOT
+docker rmi com.yf/eureka-consumer:1.0-SNAPSHOT
+docker rmi com.yf/eureka-bus:1.0-SNAPSHOT
+
+gradle buildDocker
+
+docker run -d --network test_default --ip 172.18.0.200 -p 5672:5672 --hostname rabbitmq  --name rabbitmq rabbitmq:3
+docker run -d --network test_default --ip 172.18.0.100 -p 8761:8761 --hostname discovery --name discovery com.yf/eureka-server:1.0-SNAPSHOT
+sleep 15
+docker run -d --network test_default --ip 172.18.0.101 -p 8888:8888 --hostname config --name config com.yf/eureka-config:1.0-SNAPSHOT
+sleep 15
+
+docker run -d --network test_default --ip 172.18.0.2 -p 9999:9999 --hostname bus --name bus com.yf/eureka-bus:1.0-SNAPSHOT
+docker run -d --network test_default --ip 172.18.0.3 -p 1111:1111 --hostname producer --name producer com.yf/eureka-producer:1.0-SNAPSHOT
+docker run -d --network test_default --ip 172.18.0.4 -p 2222:2222 -p 5005:5005 --hostname consumer --name consumer com.yf/eureka-consumer:1.0-SNAPSHOT
+
+

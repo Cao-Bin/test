@@ -1,0 +1,21 @@
+
+info:
+  description: ${test}
+
+server:
+  port: 9999
+
+eureka:
+  instance:
+    hostname: bus
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+endpoints:
+  restart:
+    enabled: true
+

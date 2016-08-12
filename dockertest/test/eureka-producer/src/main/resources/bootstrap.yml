@@ -1,0 +1,15 @@
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+  application:
+    name: producer
+  cloud:
+    config:
+      uri: http://config:8888
+      name: producer
+      profile: ${config.profile:dev}
+      label: master
+

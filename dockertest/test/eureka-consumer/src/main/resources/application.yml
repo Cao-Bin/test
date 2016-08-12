@@ -1,0 +1,22 @@
+
+info:
+  description: ${test}
+
+server:
+  port: 2222
+
+eureka:
+  instance:
+    hostname: consumer
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+
+
+endpoints:
+  restart:
+      enabled: true
+
